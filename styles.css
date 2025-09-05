@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* first fonts and colors */
+:root {
+    --sidebar-background-color: #1992d4;
+    --main-background-color: #e2e8f0;
+    --header-background-color: #ffffff;    
+    --text-color: #000000;
+}
+
+body {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    margin: 0; /* remove default margin */
+    background-color: var(--main-background-color);
+}
+
+.outer-grid {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    grid-template-rows: 160px 1fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+    height: 100vh;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: start;
+    background-color: var(--sidebar-background-color);
+    color: white;   
+    font-weight: 800; 
+    height: 100vh;
+}
+
+.logo {
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.sidebar ul.menu {
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;    
+}
+
+.sidebar li{
+    list-style: none;
+    cursor: pointer;
+    margin-bottom: 10px;    
+}
+
+.sidebar a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    height: fit-content;
+}
+
+.sidebar img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    fill: white;
+}
+
+.sidebar .menu-icon{
+    margin-left: 40px;
+}
+
+.sidebar .logo-icon{
+    margin-left: 30px;
+}
+
+.sidebar .logo-text {
+    font-size: 1.5em;
+}
+
+
+.logo-icon img {
+    width: 44px;
+    height: 44px;    
+    margin-right: 10px;
+}
+
+
+
+.header {
+    grid-area: header;    
+    background-color: var(--header-background-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+}
+
+
+
+.main {
+    grid-area: main;
+        
+}
+
