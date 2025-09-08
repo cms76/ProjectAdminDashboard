@@ -6,6 +6,7 @@
     --main-background-color: #e2e8f0;
     --header-background-color: #ffffff;    
     --text-color: #000000;
+    --profile-pic-background-color: #facc15;
 }
 
 body {
@@ -98,8 +99,129 @@ body {
     grid-area: header;    
     background-color: var(--header-background-color);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "search admin"
+        "user buttons";
 }
 
+.header .search {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    grid-area: search;
+}
+
+.header .search img {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 10px;    
+}
+
+
+
+.header .search input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 20px;
+    border-radius: 20px;
+    border-width: 0;
+    font-size: 1em;
+    background-color: var(--main-background-color);
+}
+
+.header .admin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;    
+    width: 100%;
+    grid-area: admin;
+    font-size: 1.2em;
+    font-weight: 800;       
+}
+
+.header .admin img {
+    width: 30px;
+    height: 30px;
+    margin-left: 40px;
+    margin-right: 10px;    
+}
+
+.header > .admin > .profilepic {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    margin-right: 20px; 
+    background-color: var(--profile-pic-background-color); 
+    border-radius: 30px;  
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.header .admin span {
+    margin-right: 20px;    
+}
+
+.header .user {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "profilepic greeting"
+        "profilepic username";    
+    width: 100%;
+    grid-area: user;
+}
+
+.header > .user > .profilepic {
+    width: 80px;
+    height: 80px;
+    margin: 0px 20px 10px 30px;
+    background-color: var(--profile-pic-background-color); 
+    border-radius: 50px;  
+    padding: 10px;
+    box-sizing: border-box;
+    grid-area: profilepic;
+}
+
+.header .greeting {
+    grid-area: greeting;
+    font-size: 0.8em;
+    font-weight: 500;
+    align-self: center;
+}
+
+.header .username {
+    grid-area: username;
+    font-size: 1.5em;
+    font-weight: 800;
+}
+
+.header .buttons {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    grid-area: buttons;
+    font-size: 1em;
+    font-weight: 800;
+    margin: 10px 10px;
+}
+
+button {
+    background-color: var(--sidebar-background-color);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-left: 20px;
+    width: 120px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 800;
+}
 
 
 .main {
